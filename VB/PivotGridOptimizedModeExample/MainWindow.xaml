@@ -1,0 +1,156 @@
+﻿<dx:ThemedWindow
+    x:Class="PivotGridOptimizedModeExample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Width="800"
+    Height="400"
+    Title="Optimized Mode Example">
+
+    <dx:ThemedWindow.Resources>
+        <dx:ExcelItemsSource
+            x:Key="ExcelItemsSource"
+            FileUri="pack://application:,,,/PivotGridOptimizedModeExample;component/Data/SalesPerson.xlsx"
+            StreamDocumentFormat="Xlsx"
+            WorksheetName="Data">
+            <dx:ExcelItemsSource.Columns>
+                <dx:ExcelColumn ColumnType="{x:Type sys:String}" Name="CategoryName" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:String}" Name="Country" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:String}" Name="ProductName" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:String}" Name="Sales Person" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:DateTime}" Name="OrderDate" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:Double}" Name="OrderID" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:Double}" Name="Quantity" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:Double}" Name="Discount" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:Double}" Name="Extended Price" />
+                <dx:ExcelColumn ColumnType="{x:Type sys:Double}" Name="UnitPrice" />
+            </dx:ExcelItemsSource.Columns>
+        </dx:ExcelItemsSource>
+    </dx:ThemedWindow.Resources>
+
+    <Grid>
+        <dxpg:PivotGridControl
+            ColumnTotalsLocation="Near"
+            DataProcessingEngine="Optimized"
+            DataSource="{Binding Path=Data, Source={StaticResource ExcelItemsSource}}"
+            Name="pivotGridControl1"
+            RowTotalsLocation="Far"
+            ShowColumnGrandTotalHeader="False"
+            ShowColumnHeaders="False"
+            ShowColumnTotals="False"
+            ShowDataHeaders="False"
+            ShowFilterHeaders="False"
+            ShowRowGrandTotals="False"
+            ShowRowTotals="False">
+            <dxpg:PivotGridControl.Fields>
+                <dxpg:PivotGridField
+                    Area="DataArea"
+                    AreaIndex="5"
+                    Caption="Product Sales"
+                    CellFormat="C"
+                    Name="fieldSales">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="Extended Price" />
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="DataArea"
+                    AreaIndex="4"
+                    Caption="Running Total"
+                    CellFormat="C"
+                    Name="fieldRunningTotal">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:RunningTotalBinding PartitioningCriteria="ColumnValue" SummaryType="Sum">
+                            <dxpg:RunningTotalBinding.Source>
+                                <dxpg:DataSourceColumnBinding ColumnName="Extended Price" />
+                            </dxpg:RunningTotalBinding.Source>
+                        </dxpg:RunningTotalBinding>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="DataArea"
+                    AreaIndex="3"
+                    Caption="Moving Average"
+                    CellFormat="C"
+                    Name="fieldMovingAverage">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:MovingCalculationBinding
+                            NextValuesCount="1"
+                            PartitioningCriteria="ColumnValue"
+                            PreviousValuesCount="1"
+                            SummaryType="Sum">
+                            <dxpg:MovingCalculationBinding.Source>
+                                <dxpg:DataSourceColumnBinding ColumnName="Extended Price" />
+                            </dxpg:MovingCalculationBinding.Source>
+                        </dxpg:MovingCalculationBinding>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="DataArea"
+                    AreaIndex="2"
+                    Caption="Difference"
+                    Name="fieldDifference">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DifferenceBinding
+                            DifferenceType="Absolute"
+                            PartitioningCriteria="ColumnValue"
+                            Target="Previous">
+                            <dxpg:DifferenceBinding.Source>
+                                <dxpg:DataSourceColumnBinding ColumnName="Extended Price" />
+                            </dxpg:DifferenceBinding.Source>
+                        </dxpg:DifferenceBinding>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="DataArea"
+                    AreaIndex="1"
+                    Caption="Rank"
+                    Name="fieldRank">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:RankBinding
+                            Order="Descending"
+                            PartitioningCriteria="ColumnValueAndRowParentValue"
+                            RankType="Unique">
+                            <dxpg:RankBinding.Source>
+                                <dxpg:DataSourceColumnBinding ColumnName="Extended Price" />
+                            </dxpg:RankBinding.Source>
+                        </dxpg:RankBinding>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="DataArea"
+                    AreaIndex="0"
+                    Caption="Percent of Total"
+                    CellFormat="P1"
+                    Name="fieldPercentOfTotal">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:PercentOfTotalBinding PartitioningCriteria="ColumnValueAndRowParentValue">
+                            <dxpg:PercentOfTotalBinding.Source>
+                                <dxpg:DataSourceColumnBinding ColumnName="Extended Price" />
+                            </dxpg:PercentOfTotalBinding.Source>
+                        </dxpg:PercentOfTotalBinding>
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="RowArea"
+                    Caption="Year"
+                    Name="fieldYear">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateYear" />
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+                <dxpg:PivotGridField
+                    Area="RowArea"
+                    Caption="Month"
+                    Name="fieldMonth">
+                    <dxpg:PivotGridField.DataBinding>
+                        <dxpg:DataSourceColumnBinding ColumnName="OrderDate" GroupInterval="DateMonth" />
+                    </dxpg:PivotGridField.DataBinding>
+                </dxpg:PivotGridField>
+            </dxpg:PivotGridControl.Fields>
+        </dxpg:PivotGridControl>
+    </Grid>
+
+</dx:ThemedWindow>
