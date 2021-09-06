@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <BaseIntermediateOutputPath>obj.NetFX</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,18 +36,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.DataAccess.v19.2" />
-    <Reference Include="DevExpress.Mvvm.v19.2" />
-    <Reference Include="DevExpress.Data.v19.2" />
-    <Reference Include="DevExpress.PivotGrid.v19.2.Core" />
-    <Reference Include="DevExpress.Printing.v19.2.Core" />
-    <Reference Include="DevExpress.Xpf.Core.v19.2" />
-    <Reference Include="DevExpress.Xpf.Core.v19.2.Extensions" />
-    <Reference Include="DevExpress.Xpf.Grid.v19.2" />
-    <Reference Include="DevExpress.Xpf.Grid.v19.2.Core" />
-    <Reference Include="DevExpress.Xpf.PivotGrid.v19.2" />
-    <Reference Include="DevExpress.Xpf.Printing.v19.2" />
-    <Reference Include="DevExpress.Xpf.Themes.Office2019Colorful.v19.2" />
+    <Reference Include="DevExpress.DataAccess.v21.1" />
+    <Reference Include="DevExpress.Mvvm.v21.1" />
+    <Reference Include="DevExpress.Data.v21.1" />
+    <Reference Include="DevExpress.PivotGrid.v21.1.Core" />
+    <Reference Include="DevExpress.Printing.v21.1.Core" />
+    <Reference Include="DevExpress.Data.Desktop.v21.1" />
+    <Reference Include="DevExpress.Xpf.Core.v21.1" />
+    <Reference Include="DevExpress.Xpf.Core.v21.1.Extensions" />
+    <Reference Include="DevExpress.Xpf.Grid.v21.1" />
+    <Reference Include="DevExpress.Xpf.Grid.v21.1.Core" />
+    <Reference Include="DevExpress.Xpf.PivotGrid.v21.1" />
+    <Reference Include="DevExpress.Xpf.Printing.v21.1" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Colorful.v21.1" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
