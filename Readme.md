@@ -4,24 +4,26 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 <!-- default file list -->
-*Files to look at*:
-* [MainWindow.xaml](./CS/PivotGridOptimizedModeExample/MainWindow.xaml)
-<!-- default file list end -->
 
-# Pivot Grid Optimized Mode - Field Calculation Data Binding
+# Pivot Grid for WPF - Bind Pivot Grid Fields to Window Calculations
 
-This example demonstrates how to use a **Data Binding API** to specify the PivotGridField's data source. Instead of bound and unbound fields, the Data Binding API allows you to specify the data binding source. The former _bound_ field gets data from a data source column - the  _bound_ field is a field bound to data with the  **DataSourceColumnBinding** instance. The former _unbound_ fields are fields that get data from calculations (**ExpressionDataBinding**), specific window calculations (**RunningTotalBinding**, **MovingCalculationBinding** and others), or from a window calculation specified by an expression (**WindowExpressionBinding**).
+This example shows how to bind Pivot Grid fields to the result of the window calculations and display aggregated values in the window.
 
-The **Data Binding API** is in effect only in the [Optimized Mode](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotDataProcessingEngine). Other calculation engines ignore the [PivotGridField.DataBinding](http://docs.devexpress.devx/WPF/DevExpress.Xpf.PivotGrid.PivotGridField.DataBinding) property.
+The following classes are used in the example:
+
+- [Running Total](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RunningTotalBinding?p=netframework)
+- [Difference](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.DifferenceBinding?p=netframework)
+- [Rank](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RankBinding?p=netframework)
+- [Percent of Total](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PercentOfTotalBinding?p=netframework)
+- [Moving Calculation](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.MovingCalculationBinding?p=netframework)
+- [Window Expression](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.WindowExpressionBinding?p=netframework)
 
 ![](/images/screenshot.png)
 
-> The project uses the [ExcelDataSource](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.Excel.ExcelDataSource) component in the **ExcelItemsSource** wrapper. It requires references to the following assemblies in addition to references created automatically when the PivotGrid control is dropped from the Toolbox:
-> * DevExpress.DataAccess
-> * DevExpress.Xpf.Core.Extensions
-> * DevExpress.Xpf.Grid
-> * DevExpress.Xpf.Grid.Core
+## Files to Look at
+* [MainWindow.xaml](./CS/PivotGridOptimizedModeExample/MainWindow.xaml)
+<!-- default file list end -->
 
-**See also:**
+## Documentation
 
-* [Optimized Calculation Engine](https://docs.devexpress.com/CoreLibraries/401367)
+- [Optimized Calculation Engine](https://docs.devexpress.com/CoreLibraries/401367/devexpress-pivot-grid-core-library/data-processing-engines/pivot-grid-optimized-calculation-engine)
