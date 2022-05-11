@@ -8,7 +8,7 @@
 
 This example shows how to bind Pivot Grid fields to the result of the window calculations and display aggregated values in the window.
 
-The following classes are used in the example:
+This example uses the following classes:
 
 - [Running Total](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RunningTotalBinding?p=netframework)
 - [Difference](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.DifferenceBinding?p=netframework)
