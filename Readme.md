@@ -10,12 +10,12 @@ This example shows how to bind Pivot Grid fields to the result of the window cal
 
 This example uses the following classes:
 
-- [Running Total](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RunningTotalBinding?p=netframework)
-- [Difference](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.DifferenceBinding?p=netframework)
-- [Rank](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RankBinding?p=netframework)
-- [Percent of Total](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PercentOfTotalBinding?p=netframework)
-- [Moving Calculation](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.MovingCalculationBinding?p=netframework)
-- [Window Expression](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.WindowExpressionBinding?p=netframework)
+- [RunningTotalBinding](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RunningTotalBinding?p=netframework)
+- [DifferenceBinding](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.DifferenceBinding?p=netframework)
+- [RankBinding](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.RankBinding?p=netframework)
+- [PercentOfTotalBinding](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PercentOfTotalBinding?p=netframework)
+- [MovingCalculationBinding](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.MovingCalculationBinding?p=netframework)
+- [WindowExpressionBinding](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.WindowExpressionBinding?p=netframework)
 
 ![](/images/screenshot.png)
 
