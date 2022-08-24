@@ -27,3 +27,4 @@ This example uses the following classes:
 ## Documentation
 
 - [Optimized Calculation Engine](https://docs.devexpress.com/CoreLibraries/401367/devexpress-pivot-grid-core-library/data-processing-engines/pivot-grid-optimized-calculation-engine)
+- [Bind Pivot Grid Fields to Window Calculations](https://docs.devexpress.com/WPF/403913/controls-and-libraries/pivot-grid/binding-to-data/bind-pivot-grid-fields-to-window-calculations)
