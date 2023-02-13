@@ -20,7 +20,7 @@ This example uses the following classes:
 
 ![](/images/screenshot.png)
 
-## Files to Look at
+## Files to Review
 * [MainWindow.xaml](./CS/PivotGridOptimizedModeExample/MainWindow.xaml)
 <!-- default file list end -->
 
