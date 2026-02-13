@@ -30,7 +30,7 @@ This example uses the following classes:
 - [Optimized Calculation Engine](https://docs.devexpress.com/CoreLibraries/401367/devexpress-pivot-grid-core-library/data-processing-engines/pivot-grid-optimized-calculation-engine)
 - [Bind Pivot Grid Fields to Window Calculations](https://docs.devexpress.com/WPF/403913/controls-and-libraries/pivot-grid/binding-to-data/bind-pivot-grid-fields-to-window-calculations)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-pivotgrid-optimized-mode-calculation-data-binding&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=wpf-pivotgrid-optimized-mode-calculation-data-binding&~~~was_helpful=no)
 
